@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --animate-spin-slow: spin 8s linear infinite;
+
+  /* Dev Crafters Custom Palette */
+  --color-brand: #49A9B1;
+  --color-brand-glow: rgba(73, 169, 177, 0.15);
+  
+  /* Backgrounds (Using Pure Black & Deep Zinc) */
+  --color-dark-bg: #000000;
+  --color-dark-card: #0F1111;
+  
+  /* Text & Borders */
+  --color-text-high: #FFFFFF;
+  --color-text-low: #A1A1AA;
+  --color-border-subtle: rgba(255, 255, 255, 0.1);
+
+  /* Overriding primary accents to your Teal */
+  --color-primary-500: #49A9B1;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    @apply bg-dark-bg text-text-high;
+  }
+  
+  body {
+    @apply antialiased;
+  }
+}
+
+/* Custom Scrollbar for Dev Crafters */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-dark-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #27272A; /* Zinc-800 */
+  border-radius: 10px;
+  border: 2px solid var(--color-dark-bg);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand);
+}
