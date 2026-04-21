@@ -9,6 +9,7 @@ import thumbHome from '../assets/images/thumbforhomestyler.png';
 import thumbGift from '../assets/images/thumbforgiftshop.png';
 import thumbBlog from '../assets/images/thumbforblog.png';
 import thumbRabia from '../assets/images/thumbrabia.png'; // New Thumbnail Added
+import thumbforfitness from '../assets/images/thumbforfitness.png';
 
 const projects = [
   {
@@ -65,6 +66,14 @@ const projects = [
     image: thumbBlog,
     tags: ['Next.js', 'Vercel', 'SEO'],
     link: 'https://blog-ashy-tau-32.vercel.app/',
+    repo: '#'
+  },
+  {
+    title: 'Fitness Website',
+    description: 'A high-performance fitness application with optimized SEO, clean typography, and fast loading.',
+    image: thumbforfitness,
+    tags: ['Next.js', 'Vercel', 'SEO'],
+    link: 'https://ammara-developer.github.io/Gym-Website/',
     repo: '#'
   }
 ];
