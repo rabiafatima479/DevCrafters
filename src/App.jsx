@@ -4,11 +4,15 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
 import Services from './components/Services';
+import TeamMembers from './components/TeamMembers';
 import Projects from './components/Projects';
+import WebPackages from './components/WebPackages';
 import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+
 import { useEffect, useState } from 'react';
+import { Package } from 'lucide-react';
 
 function ScrollProgress() {
   const { scrollYProgress } = useScroll();
@@ -26,20 +30,20 @@ function ScrollProgress() {
   );
 }
 
-function Loader() {
-  return (
-    <div className="fixed inset-0 z-[100] bg-zinc-950 flex items-center justify-center">
-      <motion.div
-        initial={{ scale: 0.8, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 0.5 }}
-        className="text-4xl font-extrabold tracking-tighter text-white"
-      >
-        DEV <span className="text-brand">CRAFTERS</span>
-      </motion.div>
-    </div>
-  );
-}
+  function Loader() {
+    return (
+      <div className="fixed inset-0 z-[100] bg-zinc-950 flex items-center justify-center">
+        <motion.div
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          className="text-4xl font-extrabold tracking-tighter text-white"
+        >
+          DEV <span className="text-brand">CRAFTERS</span>
+        </motion.div>
+      </div>
+    );
+  }
 
 export default function App() {
   const [loading, setLoading] = useState(true);
@@ -66,6 +70,8 @@ export default function App() {
           <About />
           <div className="h-px bg-gradient-to-r from-transparent via-zinc-200 dark:via-zinc-800 to-transparent mx-auto max-w-7xl" />
           <Services />
+          <WebPackages/>
+          <TeamMembers/>
           <Projects />
           <Testimonials />
           <Contact />

@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { ExternalLink, Github } from 'lucide-react';
+import { ExternalLink, Github, ArrowUpRight } from 'lucide-react';
 
 // --- 🖼️ IMAGE IMPORTS ---
 import thumbDride from '../assets/images/thumbfordride.png';
@@ -8,7 +8,7 @@ import thumbSoccer from '../assets/images/thumbforsoccer.png';
 import thumbHome from '../assets/images/thumbforhomestyler.png';
 import thumbGift from '../assets/images/thumbforgiftshop.png';
 import thumbBlog from '../assets/images/thumbforblog.png';
-import thumbRabia from '../assets/images/thumbrabia.png'; // New Thumbnail Added
+import thumbRabia from '../assets/images/thumbrabia.png'; 
 import thumbforfitness from '../assets/images/thumbforfitness.png';
 
 const projects = [
@@ -23,7 +23,7 @@ const projects = [
   {
     title: 'Personal Portfolio',
     description: 'A sleek, modern developer portfolio showcasing projects with high-performance animations and dark mode support.',
-    image: thumbRabia, // Integrated your new thumbnail
+    image: thumbRabia,
     tags: ['Next.js', 'Framer Motion', 'Vercel'],
     link: 'https://my-portfolio-nu-brown-5vvicwwewm.vercel.app/',
     repo: '#'
@@ -80,113 +80,134 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="relative py-24 px-6 bg-zinc-50 dark:bg-dark-bg/50 overflow-hidden">
+    <section id="projects" className="relative py-32 px-6 bg-white dark:bg-[#080808] overflow-hidden">
       
-      {/* --- 🎨 GRAPHIC BACKGROUND --- */}
-      <div className="absolute inset-0 z-0 pointer-events-none opacity-50 dark:opacity-20">
-        <svg className="absolute top-0 left-0 w-full h-full" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <pattern id="dotPattern" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
-              <circle cx="2" cy="2" r="1.5" fill="#49A9B1" />
-            </pattern>
-          </defs>
-          <rect width="100%" height="100%" fill="url(#dotPattern)" />
-        </svg>
-      </div>
+      {/* --- 🧊 AMBIENT BACKGROUND ELEMENTS --- */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand/5 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-blue-500/5 blur-[120px] rounded-full translate-y-1/2 -translate-x-1/2" />
 
-      <div className="max-w-7xl mx-auto relative z-10">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-          <div>
+      <div className="max-w-[1400px] mx-auto relative z-10">
+        
+        {/* --- 🏷️ ELITE HEADER --- */}
+        <div className="flex flex-col mb-24 space-y-6">
+          <div className="flex items-center gap-4">
+            <div className="h-[2px] w-12 bg-brand" />
             <motion.p 
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="text-brand font-black uppercase tracking-[0.3em] text-xs mb-4"
+              className="text-brand font-bold uppercase tracking-[0.4em] text-[10px]"
             >
-              Our Portfolio
+              Excellence in Motion
             </motion.p>
-            <motion.h2 
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-4xl md:text-6xl font-black text-zinc-900 dark:text-text-high tracking-tight"
-            >
-              Recent Work
-            </motion.h2>
           </div>
           
-          <motion.a 
-            href="https://github.com/" // Change this to your real GitHub profile
-            target="_blank"
-            whileHover={{ scale: 1.05, x: 10 }}
-            className="group flex items-center gap-2 text-brand font-black text-xs tracking-[0.2em] uppercase transition-all"
-          >
-            <span>View All Projects</span>
-            <span className="text-lg group-hover:translate-x-2 transition-transform">→</span>
-          </motion.a>
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8">
+            <motion.h2 
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              className="text-6xl md:text-8xl font-black text-zinc-900 dark:text-white tracking-tighter uppercase leading-[0.8]"
+            >
+              SELECTED <br />
+              <span className="text-transparent stroke-text dark:stroke-white transition-all duration-500 hover:text-brand hover:stroke-brand italic">WORKS</span>
+            </motion.h2>
+
+            <motion.a 
+              href="https://github.com/" 
+              target="_blank"
+              className="group relative px-8 py-4 bg-zinc-900 dark:bg-zinc-800 text-white rounded-full overflow-hidden transition-all duration-300"
+            >
+              <div className="absolute inset-0 bg-brand translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+              <div className="relative flex items-center gap-3 text-[10px] font-black uppercase tracking-widest">
+                Explore Archive <ArrowUpRight size={14} />
+              </div>
+            </motion.a>
+          </div>
         </div>
 
-        {/* --- 📱 RESPONSIVE GRID --- */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-20">
+        {/* --- ⚡ THE PROJECT MASONRY --- */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-32">
           {projects.map((project, index) => (
             <motion.div
               key={project.title}
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group"
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, delay: index % 2 * 0.2 }}
+              className={cn(
+                "relative group",
+                index % 2 !== 0 ? "md:mt-32" : "" // Offset effect for high-end look
+              )}
             >
-              {/* Thumbnail Container */}
-              <div className="relative overflow-hidden rounded-[2rem] mb-8 bg-zinc-200 dark:bg-dark-card border border-zinc-200 dark:border-border-subtle shadow-2xl transition-all duration-500">
+              {/* Media Container */}
+              <div className="relative aspect-[4/5] overflow-hidden rounded-[2.5rem] bg-zinc-100 dark:bg-zinc-900 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.3)] dark:shadow-[0_30px_60px_-15px_rgba(0,0,0,0.7)] group-hover:shadow-brand/20 transition-all duration-700">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-[280px] sm:h-[350px] md:h-[450px] object-cover group-hover:scale-110 transition-transform duration-1000 ease-in-out"
-                  referrerPolicy="no-referrer"
+                  className="w-full h-full object-cover transition-all duration-[1.5s] group-hover:scale-110 group-hover:rotate-1"
                 />
                 
-                {/* Overlay with glass effect */}
-                <div className="absolute inset-0 bg-zinc-900/40 backdrop-blur-[3px] opacity-0 group-hover:opacity-100 transition-all duration-400 flex items-center justify-center gap-6">
-                  <a 
-                    href={project.link} 
-                    target="_blank" 
-                    rel="noreferrer"
-                    className="p-4 bg-brand text-white rounded-full hover:scale-110 transition-transform shadow-2xl"
-                  >
-                    <ExternalLink size={24} />
+                {/* Floating Glass Controls */}
+                <div className="absolute top-6 right-6 flex flex-col gap-3 translate-x-10 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-500">
+                  <a href={project.link} target="_blank" className="w-12 h-12 bg-white/10 backdrop-blur-md border border-white/20 rounded-full flex items-center justify-center text-white hover:bg-brand hover:border-brand transition-all">
+                    <ExternalLink size={18} />
                   </a>
-                  <a 
-                    href={project.repo} 
-                    className="p-4 bg-white text-zinc-900 rounded-full hover:scale-110 transition-transform shadow-2xl"
-                  >
-                    <Github size={24} />
+                  <a href={project.repo} className="w-12 h-12 bg-white/10 backdrop-blur-md border border-white/20 rounded-full flex items-center justify-center text-white hover:bg-zinc-900 transition-all">
+                    <Github size={18} />
                   </a>
+                </div>
+
+                {/* Index Number */}
+                <div className="absolute bottom-10 left-10 text-white/10 text-9xl font-black italic pointer-events-none">
+                  0{index + 1}
                 </div>
               </div>
               
-              {/* Content Details */}
-              <div className="px-2">
-                <div className="flex flex-wrap gap-2 mb-4">
+              {/* Info Section */}
+              <div className="mt-10 space-y-4 px-4">
+                <div className="flex items-center gap-3">
                   {project.tags.map((tag) => (
-                    <span key={tag} className="px-3 py-1 bg-brand/10 dark:bg-brand/20 text-brand rounded-md text-[10px] font-black uppercase tracking-widest">
+                    <span key={tag} className="text-[9px] font-black uppercase tracking-[0.2em] text-brand border-b border-brand/30 pb-1">
                       {tag}
                     </span>
                   ))}
                 </div>
                 
-                <h3 className="text-2xl md:text-3xl font-black text-zinc-900 dark:text-text-high mb-3 tracking-tighter group-hover:text-brand transition-colors duration-300">
+                <h3 className="text-4xl font-black text-zinc-900 dark:text-white uppercase tracking-tighter">
                   {project.title}
                 </h3>
-                <p className="text-zinc-600 dark:text-text-low leading-relaxed mb-6 font-medium text-sm md:text-base max-w-lg">
+                
+                <p className="text-zinc-500 dark:text-zinc-400 font-medium text-lg leading-relaxed max-w-md">
                   {project.description}
                 </p>
+
+                <motion.a 
+                  href={project.link}
+                  className="inline-flex items-center gap-2 text-zinc-900 dark:text-white text-xs font-black uppercase tracking-widest group/link"
+                >
+                  Project Details 
+                  <div className="w-8 h-[1px] bg-brand group-hover/link:w-12 transition-all" />
+                </motion.a>
               </div>
             </motion.div>
           ))}
         </div>
       </div>
+
+      {/* CSS for Outlined Text (Stroke Effect) */}
+      <style jsx>{`
+        .stroke-text {
+          -webkit-text-stroke: 1px #d4d4d8;
+          color: transparent;
+        }
+        .dark .stroke-text {
+          -webkit-text-stroke: 1px #3f3f46;
+        }
+      `}</style>
     </section>
   );
+}
+
+// Utility to handle conditional classes if not already present in your project
+function cn(...classes) {
+  return classes.filter(Boolean).join(' ');
 }
