@@ -13,7 +13,7 @@ import Tahir from '../assets/images/tahir.jpeg';
 const TeamMembersData = [
   { id: 1, name: "Rabia Fatima", role: "CEO & Founder", linkedin: "https://www.linkedin.com/in/rabia-fatima-b553b7319/", portfolio: "https://my-portfolio-nu-brown-5vvicwwewm.vercel.app/", image: Rabia, quote: "Crafting digital empires from lines of code." },
   { id: 2, name: "Bisma Ali", role: "MERN Stack Developer", linkedin: "https://www.linkedin.com/in/bisma-ali-b522142a2/", portfolio: "#", image: Bisma, quote: "Turning complex logic into seamless interfaces." },
-  { id: 3, name: "Ammara Saleem", role: "Frontend Developer", linkedin: "https://www.linkedin.com/in/ammara-saleem-422825370/", portfolio: "#", image: Amara, quote: "Pixel-perfect precision in every dynamic view." },
+  { id: 3, name: "Ammara Saleem", role: "Frontend Developer", linkedin: "https://www.linkedin.com/in/ammara-saleem-422825370/", portfolio: "https://ammara-developer.github.io/Portfolio/", image: Amara, quote: "Pixel-perfect precision in every dynamic view." },
   { id: 4, name: "Syed Muzammil Sherazi", role: "Full Stack Developer", linkedin: "https://www.linkedin.com/in/muzammil-sherazi-1b9a0131b/", portfolio: "https://muzammilsherazi-portfolio.netlify.app/", image: Muzammil, quote: "Bridging the gap between robust backends and elite frontends." },
   { id: 5, name: "M Tahir Javed", role: "Digital Marketer", linkedin: "https://www.linkedin.com/in/tahir-javed-0ab7b3360/", portfolio: "#", image: Tahir, quote: "Amplifying brand presence across the digital noise." },
   { id: 6, name: "M Ismail Muneer", role: "Visual Editor", linkedin: "https://www.linkedin.com/in/ismail-sheikh-9926a72b6/", portfolio: "#", image: Ismail, quote: "Defining the visual aesthetic of modern brands." }
